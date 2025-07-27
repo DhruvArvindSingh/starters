@@ -1,0 +1,257 @@
+Project structure:
+.
+├── CONTRIBUTING.md
+├── LICENSE
+├── README.md
+├── angular
+│   ├── base
+│   │   ├── angular.json
+│   │   ├── ionic.config.json
+│   │   ├── karma.conf.js
+│   │   ├── package.json
+│   │   ├── src
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.spec.json
+│   ├── community
+│   │   ├── ionic-team
+│   │   └── oktadeveloper
+│   └── official
+│       ├── blank
+│       ├── list
+│       ├── sidemenu
+│       └── tabs
+├── angular-standalone
+│   ├── base
+│   │   ├── angular.json
+│   │   ├── ionic.config.json
+│   │   ├── karma.conf.js
+│   │   ├── package.json
+│   │   ├── src
+│   │   ├── tsconfig.app.json
+│   │   ├── tsconfig.json
+│   │   └── tsconfig.spec.json
+│   ├── community
+│   └── official
+│       ├── blank
+│       ├── list
+│       ├── sidemenu
+│       └── tabs
+├── bin
+│   └── ionic-starters
+├── codebase_files.txt
+├── integrations
+│   └── cordova
+│       ├── config.xml
+│       └── resources
+├── ionic-angular
+│   ├── base
+│   │   ├── ionic.config.json
+│   │   ├── package.json
+│   │   ├── src
+│   │   ├── tsconfig.json
+│   │   └── tslint.json
+│   ├── community
+│   │   ├── danielsogl
+│   │   ├── ionic-team
+│   │   └── oktadeveloper
+│   └── official
+│       ├── aws
+│       ├── blank
+│       ├── sidemenu
+│       ├── super
+│       ├── super.welcome.js
+│       ├── tabs
+│       └── tutorial
+├── ionic1
+│   ├── base
+│   │   ├── bower.json
+│   │   ├── gulpfile.js
+│   │   ├── hooks
+│   │   ├── ionic.config.json
+│   │   ├── package.json
+│   │   ├── scss
+│   │   └── www
+│   ├── community
+│   └── official
+│       ├── blank
+│       ├── maps
+│       ├── sidemenu
+│       └── tabs
+├── package-lock.json
+├── package.json
+├── project_context.txt
+├── react
+│   ├── base
+│   │   ├── ionic.config.json
+│   │   ├── package.json
+│   │   ├── public
+│   │   ├── src
+│   │   └── tsconfig.json
+│   ├── community
+│   │   └── ionic-team
+│   └── official
+│       ├── blank
+│       ├── list
+│       ├── sidemenu
+│       └── tabs
+├── react-vite
+│   ├── base
+│   │   ├── cypress
+│   │   ├── cypress.config.ts
+│   │   ├── eslint.config.js
+│   │   ├── index.html
+│   │   ├── ionic.config.json
+│   │   ├── package.json
+│   │   ├── public
+│   │   ├── src
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.node.json
+│   │   └── vite.config.ts
+│   ├── community
+│   │   └── ionic-team
+│   └── official
+│       ├── blank
+│       ├── list
+│       ├── sidemenu
+│       └── tabs
+├── src
+│   ├── commands
+│   │   ├── build.ts
+│   │   ├── deploy.ts
+│   │   ├── find-redundant.ts
+│   │   ├── generate-checksum.ts
+│   │   └── test.ts
+│   ├── definitions.ts
+│   ├── index.ts
+│   ├── lib
+│   │   └── build.ts
+│   └── utils
+│       └── index.ts
+├── tsconfig.json
+├── types
+│   ├── cross-spawn.d.ts
+│   └── string-width.d.ts
+├── vue
+│   ├── base
+│   │   ├── babel.config.js
+│   │   ├── cypress.json
+│   │   ├── ionic.config.json
+│   │   ├── jest.config.js
+│   │   ├── package.json
+│   │   ├── public
+│   │   ├── src
+│   │   ├── tests
+│   │   └── tsconfig.json
+│   ├── community
+│   │   └── ionic-team
+│   └── official
+│       ├── blank
+│       ├── list
+│       ├── sidemenu
+│       └── tabs
+└── vue-vite
+    ├── base
+    │   ├── cypress.config.ts
+    │   ├── index.html
+    │   ├── ionic.config.json
+    │   ├── package.json
+    │   ├── public
+    │   ├── src
+    │   ├── tests
+    │   ├── tsconfig.json
+    │   ├── tsconfig.node.json
+    │   └── vite.config.ts
+    ├── community
+    │   └── ionic-team
+    └── official
+        ├── blank
+        ├── list
+        ├── sidemenu
+        └── tabs
+
+102 directories, 68 files
+Package.json content:
+{
+  "private": true,
+  "scripts": {
+    "src:clean": "rimraf dist",
+    "src:lint": "npm run eslint",
+    "src:lint:fix": "npm run eslint -- --fix",
+    "eslint": "eslint . --ext .ts",
+    "src:build": "tsc",
+    "src:watch": "tsc -w",
+    "starters:build": "node ./bin/ionic-starters build",
+    "starters:deploy": "node ./bin/ionic-starters deploy",
+    "starters:find-redundant": "node ./bin/ionic-starters find-redundant",
+    "starters:generate-checksum": "node ./bin/ionic-starters generate-checksum",
+    "starters:test": "node ./bin/ionic-starters test",
+    "build": "npm run src:build && npm run starters:build"
+  },
+  "main": "./dist/index.js",
+  "devDependencies": {
+    "@ionic/cli-framework": "^5.1.3",
+    "@ionic/prettier-config": "^2.0.0",
+    "@ionic/utils-array": "^2.1.5",
+    "@ionic/utils-fs": "^3.1.6",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "9.0.1",
+    "@types/lodash": "^4.14.183",
+    "@types/minimatch": "^3.0.5",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^18.7.6",
+    "@types/tar": "^6.1.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "aws-sdk": "^2.1197.0",
+    "colorette": "^2.0.19",
+    "cross-spawn": "^7.0.3",
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^3.1.0",
+    "lodash": "^4.17.21",
+    "minimatch": "^5.1.0",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "tar": "^6.1.11",
+    "typescript": "^4.7",
+    "typescript-eslint-language-service": "^5.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run src:lint"
+    }
+  },
+  "prettier": "@ionic/prettier-config",
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error"
+    },
+    "ignorePatterns": [
+      "node_modules",
+      "**/*.d.ts",
+      "angular",
+      "vue",
+      "react",
+      "integrations",
+      "ionic-angular",
+      "ionic1",
+      "dist",
+      "build",
+      "vue-vite",
+      "react-vite",
+      "angular-standalone"
+    ]
+  }
+}
